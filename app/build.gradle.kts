@@ -49,10 +49,13 @@ dependencies {
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)
+
+    // ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
     // Coil
     implementation(libs.coil)
+    implementation(libs.androidx.benchmark.common)
 
 
     testImplementation(libs.junit)

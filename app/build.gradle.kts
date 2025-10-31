@@ -57,6 +57,11 @@ dependencies {
     implementation(libs.coil)
     implementation(libs.androidx.benchmark.common)
 
+    // Fragment
+    implementation(libs.androidx.fragment.ktx)
+
+    // Recyclerview
+    implementation(libs.androidx.recyclerview)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

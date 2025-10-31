@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="spacing_vertical">15dp</dimen>
+    <dimen name="spacing_horizontal">15dp</dimen>
+    <dimen name="spacing">15dp</dimen>
+    <dimen name="cardRadius">8dp</dimen>
+    <dimen name="cardElevation">4dp</dimen>
+    <dimen name="height_image">150dp</dimen>
+    <dimen name="font_size">20sp</dimen>
+    <dimen name="font_size2">16sp</dimen>
+</resources>

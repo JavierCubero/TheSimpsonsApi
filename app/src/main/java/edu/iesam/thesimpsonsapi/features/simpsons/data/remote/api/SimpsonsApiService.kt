@@ -7,5 +7,5 @@ import retrofit2.http.Path
 interface SimpsonsApiService {
 
     @GET("characters")
-    suspend fun findAll(): Response<SimpsonApiModel>
+    suspend fun findAll(page: Int): Response<SimpsonApiModel>
 }

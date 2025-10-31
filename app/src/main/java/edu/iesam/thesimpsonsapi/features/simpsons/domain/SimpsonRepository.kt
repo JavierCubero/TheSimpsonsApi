@@ -1,5 +1,5 @@
 package edu.iesam.thesimpsonsapi.features.simpsons.domain
 
 interface SimpsonRepository {
-    suspend fun findAll(): Result<List<Character>>
+    suspend fun findAll(page: Int): Result<List<Character>>
 }

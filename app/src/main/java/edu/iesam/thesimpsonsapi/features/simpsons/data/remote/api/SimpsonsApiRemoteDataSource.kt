@@ -8,10 +8,10 @@ import kotlinx.coroutines.withContext
 
 class SimpsonsApiRemoteDataSource(private val apiClient: ApiClient) {
 
-    suspend fun getCharacters(): Result<List<Character>> {
+    suspend fun getCharacters(page: Int): Result<List<Character>> {
         return withContext(Dispatchers.IO) {
            val apiService = apiClient.createService(SimpsonsApiService::class.java)
-           val resultSimpsons = apiService.findAll()
+           val resultSimpsons = apiService.findAll(page)
             if (resultSimpsons.isSuccessful &&resultSimpsons.errorBody() == null) {
                 val simpsonsApiModel : SimpsonApiModel =  resultSimpsons.body()!!
                 val listCharacterApiModel : List<CharactersApiModel> = simpsonsApiModel.results

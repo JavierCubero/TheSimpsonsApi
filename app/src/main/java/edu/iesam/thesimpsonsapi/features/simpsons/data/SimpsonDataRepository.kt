@@ -5,7 +5,7 @@ import edu.iesam.thesimpsonsapi.features.simpsons.domain.Character
 import edu.iesam.thesimpsonsapi.features.simpsons.domain.SimpsonRepository
 
 class SimpsonDataRepository(private val remote: SimpsonsApiRemoteDataSource): SimpsonRepository {
-    override suspend fun findAll(): Result<List<Character>> {
-        return remote.getCharacters()
+    override suspend fun findAll(page: Int): Result<List<Character>> {
+        return remote.getCharacters(page)
     }
 }

@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/spacing"
     app:cardCornerRadius="@dimen/cardRadius"
-    app:cardElevation="@dimen/cardElevation">
+    app:cardElevation="@dimen/cardElevation"
+    app:cardBackgroundColor="@color/md_theme_tertiary">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -40,7 +41,8 @@
                 android:fontFamily="@font/roboto_thin"
                 android:textSize="@dimen/font_size"
                 android:textStyle="bold"
-                tools:text="Nombre:" />
+                tools:text="Nombre:"
+                android:textColor="@color/md_theme_surface"/>
 
             <TextView
                 android:id="@+id/ageCharacter"
@@ -48,7 +50,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_thin"
                 android:textSize="@dimen/font_size"
-                tools:text="Edad:" />
+                tools:text="Edad:"
+                android:textColor="@color/md_theme_surface"/>
 
             <TextView
                 android:id="@+id/prhaseCharacter"
@@ -56,7 +59,10 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_thin"
                 android:textSize="@dimen/font_size2"
-                android:textStyle="italic" />
+                android:textStyle="italic"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="@color/md_theme_surfaceBright_highContrast"/>
 
         </LinearLayout>
 

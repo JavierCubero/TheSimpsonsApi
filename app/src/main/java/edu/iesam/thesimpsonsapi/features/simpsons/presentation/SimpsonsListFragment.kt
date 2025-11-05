@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import edu.iesam.thesimpsonsapi.R
 import edu.iesam.thesimpsonsapi.core.api.ApiClient
+import edu.iesam.thesimpsonsapi.databinding.FragmentSimpsonsListBinding
 import edu.iesam.thesimpsonsapi.features.simpsons.data.SimpsonDataRepository
 import edu.iesam.thesimpsonsapi.features.simpsons.data.remote.api.SimpsonsApiRemoteDataSource
 import edu.iesam.thesimpsonsapi.features.simpsons.domain.Character
@@ -19,6 +20,8 @@ import edu.iesam.thesimpsonsapi.features.simpsons.domain.GetAllCharactersUseCase
 
 class SimpsonsListFragment : Fragment() {
 
+    private var _binding: FragmentSimpsonsListBinding? = null
+    private val binding get() = _binding!!
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -27,7 +30,9 @@ class SimpsonsListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_simpsons_list, container, false)
+        _binding = FragmentSimpsonsListBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -43,8 +48,7 @@ class SimpsonsListFragment : Fragment() {
                 SimpsonsApiRemoteDataSource(
                     ApiClient()
                 )
-            )
-            , page
+            ), page
         )
     )
 
@@ -59,10 +63,15 @@ class SimpsonsListFragment : Fragment() {
         viewModel.uiState.observe(viewLifecycleOwner, observer)
     }
 
-    private fun setUpRecyclerView(characters : List<Character>) {
+    private fun setUpRecyclerView(characters: List<Character>) {
         val adapter = SimpsonsListAdapter(characters)
         val recyclerView: RecyclerView = requireView().findViewById(R.id.rvSimpsonsList)
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = adapter
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

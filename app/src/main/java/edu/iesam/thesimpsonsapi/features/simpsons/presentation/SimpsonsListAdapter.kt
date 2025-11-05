@@ -8,34 +8,31 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import edu.iesam.thesimpsonsapi.R
+import edu.iesam.thesimpsonsapi.databinding.ViewItemCharacterBinding
 import edu.iesam.thesimpsonsapi.features.simpsons.domain.Character
 
-class SimpsonsListAdapter(private val characters: List<Character>):
+class SimpsonsListAdapter(private val characters: List<Character>) :
     RecyclerView.Adapter<SimpsonsListAdapter.ViewHolder>() {
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val nameCharacter: TextView
-        val ageCharacter: TextView
-        val praseCharacter: TextView
-        val imageCharacter: ImageView
-        init {
-            nameCharacter = view.findViewById(R.id.nameCharacter)
-            ageCharacter = view.findViewById(R.id.ageCharacter)
-            praseCharacter = view.findViewById(R.id.prhaseCharacter)
-            imageCharacter = view.findViewById(R.id.imageCharacter)
+    class ViewHolder(private val binding: ViewItemCharacterBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(character: Character) {
+            binding.apply {
+                nameCharacter.text = character.name
+                ageCharacter.text = character.age.toString()
+                prhaseCharacter.text = character.phrase
+                imageCharacter.load(character.urlImage)
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.view_item_character, parent, false)
-        return ViewHolder(view)
+        val binding =
+            ViewItemCharacterBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.nameCharacter.text = characters[position].name
-        holder.ageCharacter.text = characters[position].age.toString()
-        holder.praseCharacter.text = characters[position].phrase
-        holder.imageCharacter.load(characters[position].urlImage)
+        holder.bind(characters[position])
     }
 
     override fun getItemCount() = characters.size

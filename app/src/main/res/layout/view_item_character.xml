@@ -7,7 +7,7 @@
     android:layout_margin="@dimen/spacing"
     app:cardCornerRadius="@dimen/cardRadius"
     app:cardElevation="@dimen/cardElevation"
-    app:cardBackgroundColor="@color/md_theme_tertiary">
+    app:cardBackgroundColor="@color/md_theme_primaryContainer">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -38,31 +38,31 @@
                 android:id="@+id/nameCharacter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_thin"
+                android:fontFamily="@font/simpson_font"
+                android:textColor="@color/md_theme_onSecondary"
                 android:textSize="@dimen/font_size"
                 android:textStyle="bold"
-                tools:text="Nombre:"
-                android:textColor="@color/md_theme_surface"/>
+                tools:text="Nombre:" />
 
             <TextView
                 android:id="@+id/ageCharacter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_thin"
+                android:fontFamily="@font/simpson_font"
                 android:textSize="@dimen/font_size"
                 tools:text="Edad:"
-                android:textColor="@color/md_theme_surface"/>
+                android:textColor="@color/md_theme_onPrimary"/>
 
             <TextView
                 android:id="@+id/prhaseCharacter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_thin"
-                android:textSize="@dimen/font_size2"
-                android:textStyle="italic"
-                android:maxLines="2"
                 android:ellipsize="end"
-                android:textColor="@color/md_theme_surfaceBright_highContrast"/>
+                android:fontFamily="@font/akbar"
+                android:maxLines="2"
+                android:textColor="@color/md_theme_onTertiary"
+                android:textSize="@dimen/font_size2"
+                android:textStyle="italic" />
 
         </LinearLayout>
 

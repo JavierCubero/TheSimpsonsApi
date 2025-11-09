@@ -19,7 +19,7 @@ class SimpsonsListAdapter(private val characters: List<Character>) :
             binding.apply {
                 nameCharacter.text = character.name
                 ageCharacter.text = character.age.toString()
-                prhaseCharacter.text = character.phrase
+                prhaseCharacter.text = "\" ${character.phrase} \""
                 imageCharacter.load(character.urlImage)
             }
         }

@@ -67,6 +67,11 @@ dependencies {
     // Recyclerview
     implementation(libs.androidx.recyclerview)
 
+    // Mockk
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

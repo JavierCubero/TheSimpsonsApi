@@ -48,8 +48,8 @@
                 android:id="@+id/ageCharacter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/simpson_font"
-                android:textSize="@dimen/font_size"
+                android:fontFamily="@font/akbar"
+                android:textSize="@dimen/font_size2"
                 tools:text="Edad:"
                 android:textColor="@color/md_theme_onPrimary"/>
 
